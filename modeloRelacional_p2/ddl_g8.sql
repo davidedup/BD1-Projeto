@@ -1,9 +1,12 @@
+DROP TABLE venda_produtos;
 DROP TABLE produto;
 DROP TABLE venda;
+DROP TABLE dependentes;
 DROP TABLE cliente;
 DROP TABLE telefones_transportadora;
 DROP TABLE transportadora;
-/*DROP TABLE telefones_empregado; */
+DROP TABLE telefones_empregado;
+DROP TABLE atuacao_empregado;
 DROP TABLE empregado;
 DROP TABLE regiao;
 DROP TABLE fornecedor;
@@ -34,7 +37,7 @@ CREATE TABLE fornecedor (
     nome VARCHAR(128) NOT NULL,
     email VARCHAR(128) NOT NULL,
     endereco VARCHAR(128) NOT NULL,
-    telefone VARCHAR(20) NOT NULL,
+    telefone INT,
     homepage VARCHAR(128) NOT NULL
 );
 
@@ -49,8 +52,8 @@ CREATE TABLE empregado (
     mat_supervisor INT NOT NULL,
     nome VARCHAR(128) NOT NULL,
     funcao VARCHAR(128) NOT NULL,
-    dt_nascimento VARCHAR(128) NOT NULL,
-    dt_contrato DATE,
+    dt_nascimento DATE NOT NULL,
+    dt_contrato DATE NOT NULL,
     endereco VARCHAR(128) NOT NULL,
     salario FLOAT(20),
     FOREIGN KEY (mat_supervisor) REFERENCES empregado(matricula)
@@ -81,8 +84,8 @@ CREATE TABLE produto (
     preco_compra FLOAT(20),
     margem_lucro FLOAT(20),
     descontinuado FLOAT(20),
-    dt_fabric VARCHAR(10) NOT NULL,
-    dt_validade VARCHAR(10) NOT NULL
+    dt_fabric DATE NOT NULL,
+    dt_validade DATE NOT NULL
 );
 
 
@@ -109,30 +112,32 @@ CREATE TABLE regiao (
     nome VARCHAR(128) NOT NULL
 );
 
-
-
-
-/*
 CREATE TABLE dependentes (
-    idDependente,
-    idCliente,
+    idDependente INT,
+    idCliente INT,
     nome VARCHAR(128) NOT NULL,
     sexo VARCHAR(1) NOT NULL,
-    dt_nascimento VARCHAR(10) NOT NULL
+    dt_nascimento DATE NOT NULL,
+    PRIMARY KEY (idDependente, idCliente),
+    FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
 );
 
 CREATE TABLE venda_produtos (
-    idVenda,
-    idProduto,
+    idVenda INT,
+    idProduto INT,
     preco_unitario FLOAT(20),
     quantidade INT,
-    desconto FLOAT(20)
+    desconto FLOAT(20),
+    PRIMARY KEY (idVenda, idProduto),
+    FOREIGN KEY (idVenda) REFERENCES venda(idVenda),
+    FOREIGN KEY (idProduto) REFERENCES produto(idProduto)
 );
 
 CREATE TABLE atuacao_empregado (
-    CONSTRAINT PK_ATUA_USUARIO PRIMARY KEY (matricula, idRegiao)
+    matricula INT,
+    idRegiao INT,
+    PRIMARY KEY (matricula, idRegiao),
+    FOREIGN KEY (matricula) REFERENCES empregado(matricula),
+    FOREIGN KEY (idRegiao) REFERENCES regiao(idRegiao)
 );
-
-*/
-
 
