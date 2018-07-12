@@ -18,7 +18,7 @@ CREATE TABLE cliente (
     sobrenome VARCHAR(128) NOT NULL,
     cpf VARCHAR(14) NOT NULL,
     titulo_tratamento VARCHAR(20) NOT NULL,
-    dt_nascimento DATE NOT NULL,
+    dt_nascimento DATE,
     sexo VARCHAR(1) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     email VARCHAR(50) NOT NULL,
@@ -51,8 +51,8 @@ CREATE TABLE empregado (
     mat_supervisor INT,
     nome VARCHAR(128) NOT NULL,
     funcao VARCHAR(128) NOT NULL,
-    dt_nascimento DATE NOT NULL,
-    dt_contrato DATE NOT NULL,
+    dt_nascimento DATE,
+    dt_contrato DATE,
     endereco VARCHAR(128) NOT NULL,
     salario FLOAT(20),
     
@@ -86,8 +86,8 @@ CREATE TABLE produto (
     preco_compra FLOAT(20),
     margem_lucro FLOAT(20),
     descontinuado FLOAT(20),
-    dt_fabric DATE NOT NULL,
-    dt_validade DATE NOT NULL,
+    dt_fabric DATE,
+    dt_validade DATE,
     
     FOREIGN KEY (id_categoria) REFERENCES categoria(idCategoria),
     FOREIGN KEY (id_fornecedor)  REFERENCES fornecedor(idFornecedor)
@@ -123,7 +123,7 @@ CREATE TABLE dependente (
     idCliente INT,
     nome VARCHAR(128) NOT NULL,
     sexo VARCHAR(1) NOT NULL,
-    dt_nascimento DATE NOT NULL,
+    dt_nascimento DATE,
     
     PRIMARY KEY (idDependente, idCliente),
     FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
@@ -149,3 +149,4 @@ CREATE TABLE atuacao_empregado (
     FOREIGN KEY (matricula) REFERENCES empregado(matricula),
     FOREIGN KEY (idRegiao) REFERENCES regiao(idRegiao)
 );
+
