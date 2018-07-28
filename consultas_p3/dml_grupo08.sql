@@ -1,6 +1,10 @@
 /* 01. Crie uma view que lista os clientes (ID_CLIENTE, NOME) que
 compraram produtos com desconto superior a 20% e são do
 sexo feminino.*/
+CREATE OR REPLACE VIEW PROD_DESCONTO
+AS SELECT c.ID_CLIENTE, c.NOME
+FROM CLIENTE c, ITENS_VENDA i, PRODUTO p
+WHERE i.ID_PROD = p.ID_PROD AND i.DESCONTO > 20 AND c.SEXO = 'F';
 
 
 /*02. Liste as matrículas dos supervisores dos empregados que
@@ -32,7 +36,9 @@ SEXO)*/
 
 
 /*08. Quais produtos não foram vendidos nos anos de 2015 e 2016*/
-
+SELECT p.NOME
+FROM PRODUTO p, VENDA v, ITENS_VENDA i
+WHERE i.ID_VENDA = v.ID_VENDA AND p.ID_PROD = i.ID_PROD AND TO_CHAR(v.DT_VENDA, 'YYYY') != '2015' AND TO_CHAR(v.DT_VENDA, 'YYYY') != '2016';
 
 /*09. Mostre o total gasto por pessoas que moram no bairro da Prata
 com produtos da categoria 'Utensílios'. (ID_CLIENTE,
