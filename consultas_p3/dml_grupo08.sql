@@ -10,7 +10,9 @@ WHERE i.ID_PROD = p.ID_PROD AND i.DESCONTO > 20 AND c.SEXO = 'F';
 /*02. Liste as matrículas dos supervisores dos empregados que
 venderam produtos da categoria 'Higiene' no mês de maio de
 2018.*/
-
+SELECT DISTINCT e.SUPERVISOR
+FROM EMPREGADO e, VENDA v, ITENS_VENDA i, PRODUTO p, CATEGORIA c
+WHERE v.MATRICULA = e.MATRICULA AND TO_CHAR(DT_VENDA, 'YYYY') = 2018 AND TO_CHAR(DT_VENDA, 'MM') = 05 AND i.ID_VENDA = v.ID_VENDA AND i.ID_PROD = p.ID_PROD AND c.NOME = 'Higiene' AND p.ID_CATEGORIA = c.ID_CATEGORIA;
 
 /*03. Mostre o(s) nome(s) do(s) fornecedor(s) do(s) produto(s) mais
 vendido(s) (produtos que estão em mais vendas)*/
