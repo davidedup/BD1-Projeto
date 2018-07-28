@@ -76,5 +76,6 @@ insert into ITENS_VENDA values (8, 0.99, 1, 20, 4, 4);
 insert into ITENS_VENDA values (9, 12.0, 3, 10, 4, 5);
 insert into ITENS_VENDA values (10, 1.99, 2, 20, 4, 6);
 insert into ITENS_VENDA values (11, 1.99, 2, 19, 4, 6);
+insert into ITENS_VENDA values (12, 1.99, 50, 0, 0, 6);
 
 
