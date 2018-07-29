@@ -108,6 +108,15 @@ gratuito.*/
 atualizada, se a mesma ultrapassar 30 dias da data da venda,
 inserir um bônus do valor do frete no cliente que fez a compra.*/
 
+CREATE OR REPLACE TRIGGER BONUS
+AFTER UPDATE OF DT_ENTREGA ON VENDA
+FOR EACH ROW
+WHEN (NEW.DT_VENDA - NEW.DT_ENTREGA > 30)
+BEGIN
+    UPDATE CLIENTE
+    SET BONUS = BONUS + :NEW.FRETE
+    WHERE ID_CLIENTE = :NEW.ID_CLIENTE;
+END BONUS;
 
 /*13. Crie uma visão que mostra o nome do produto e o nome do seu
 fornecedor para todos os produtos descontinuados, mesmo que
