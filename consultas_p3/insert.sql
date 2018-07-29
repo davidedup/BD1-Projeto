@@ -17,12 +17,12 @@ insert into CLIENTE values (6, '81895346213', 'Enzo', 'Barbosa Gomes', 'Sir', TO
 insert into CLIENTE values (7, '96885646615', 'Vladmir', 'Ulyanovsky Lenin', 'Sir', TO_DATE('1870/04/22', 'yyyy/mm/dd') , 'M', 'Rua Praça Vermelha', '1917B', 'Moscou', 'Kremlin', 'MO', 'Rússia', '5240512', '-', 'lenin@cccp.su', 0);
 insert into CLIENTE values (8, '19724894172', 'Ivyna', 'Carvalho Ferreira', 'Sra', TO_DATE('1985/03/30', 'yyyy/mm/dd') , 'F', 'Rua das Mangueiras', '1750', 'Campina Grande', 'Monte Santo', 'PB', 'Brasil', '5842100', '8389461124', 'bruna@gmail.com', 0);
 
-
 insert into DEPENDENTE values (0, 6, 'Enzinho', 'M', TO_DATE('1994/05/03', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (1, 7, 'Luís inácio Lula da Silva', 'M', TO_DATE('2005/10/27', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (2, 6, 'Maria Silva Pereira', 'F', TO_DATE('1997/12/04', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (3, 5, 'Silva Cantor', 'M', TO_DATE('2005/12/20', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (4, 5, 'Carlinhos Silvano Professor', 'M', TO_DATE('2005/12/20', 'yyyy/mm/dd'));
+insert into DEPENDENTE values (5, 5, 'Rosbinho Silva Junior', 'M', TO_DATE('2005/03/16', 'yyyy/mm/dd'));
 
 insert into TRANSPORTADORA values (0, 'Correios', 'correios@correios.com');
 insert into TRANSPORTADORA values (1, 'SEDEX', 'sedex@cae.com');
