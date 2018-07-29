@@ -16,6 +16,8 @@ insert into CLIENTE values (5, '29724894172', 'Bruna', 'Carvalho Ferreira', 'Sra
 insert into CLIENTE values (6, '81895346213', 'Enzo', 'Barbosa Gomes', 'Sir', TO_DATE('1994/05/03', 'yyyy/mm/dd') , 'M', 'Rua Joao Rezende', '1985', 'Campina Grande', 'Pedregal', 'PB', 'Brasil', '5840312', '-', 'enzo@gmail.com', 0);
 insert into CLIENTE values (7, '96885646615', 'Vladmir', 'Ulyanovsky Lenin', 'Sir', TO_DATE('1870/04/22', 'yyyy/mm/dd') , 'M', 'Rua Praça Vermelha', '1917B', 'Moscou', 'Kremlin', 'MO', 'Rússia', '5240512', '-', 'lenin@cccp.su', 0);
 insert into CLIENTE values (8, '19724894172', 'Ivyna', 'Carvalho Ferreira', 'Sra', TO_DATE('1985/03/30', 'yyyy/mm/dd') , 'F', 'Rua das Mangueiras', '1750', 'Campina Grande', 'Monte Santo', 'PB', 'Brasil', '5842100', '8389461124', 'bruna@gmail.com', 0);
+insert into CLIENTE values (9, '45731209434', 'Nome', 'Sobrenome', 'Sr', TO_DATE('2018/03/12', 'yyyy/mm/dd'), 'M', 'Rua das Ruas', '123', 'Campina Grande', 'Prata', 'PB', 'Brasil', '2180931', '83894615123', 'email@gmail.com', 0);
+insert into CLIENTE values (10, '75302573853', 'Ladino', 'Paladino', 'Sr', TO_DATE('2018/02/13', 'yyyy/mm/dd'), 'M', 'Rua Top', '1209', 'Campina Grande', 'Prata', 'PB', 'Brasil', '1234567', '83894615123', 'ladino@gmail.com', 0);
 
 insert into DEPENDENTE values (0, 6, 'Enzinho', 'M', TO_DATE('1994/05/03', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (1, 7, 'Luís inácio Lula da Silva', 'M', TO_DATE('2005/10/27', 'yyyy/mm/dd'));
@@ -40,6 +42,7 @@ insert into CATEGORIA values (2, 'Higiene Pessoal');
 insert into CATEGORIA values (3, 'Frutas');
 insert into CATEGORIA values (4, 'Livraria');
 insert into CATEGORIA values (5, 'Massas');
+insert into CATEGORIA values (6, 'Utensílios');
 
 
 insert into PRODUTO values (0, 'Absorvente Always 20 unidades', 6.99, 5, 'N', TO_DATE('2017/08/27', 'yyyy/mm/dd'),  TO_DATE('2020/12/30', 'yyyy/mm/dd'), 0, 2);
@@ -52,6 +55,8 @@ insert into PRODUTO values (6, 'Água sanitária Uni', 2.69, 7, 'N', TO_DATE('20
 insert into PRODUTO values (7, 'Creme de Leite Nestlé', 1.19, 5, 'N', TO_DATE('2017/12/13', 'yyyy/mm/dd'),  TO_DATE('2018/07/12', 'yyyy/mm/dd'), 0, 1);
 insert into PRODUTO values (8, 'Chamyto', 0.39, 5, 'N', TO_DATE('2018/02/13', 'yyyy/mm/dd'),  TO_DATE('2018/06/20', 'yyyy/mm/dd'), 0, 1);
 insert into PRODUTO values (9, 'Creme Dental Colgate', 0.89, 5, 'N', TO_DATE('2017/03/16', 'yyyy/mm/dd'),  TO_DATE('2018/06/25', 'yyyy/mm/dd'), 0, 2);
+insert into PRODUTO values (10, 'Espátula de Ouro', 149.99, 15, 'N', TO_DATE('2017/02/19', 'yyyy/mm/dd'), TO_DATE('2023/02/19', 'yyyy/mm/dd'), 1, 6);
+
 
 insert into EMPREGADO values (0, 'Maria Costa', 'Gerente', TO_DATE('1993/10/01', 'yyyy/mm/dd'), TO_DATE('2011/01/14', 'yyyy/mm/dd'), 'Rua Floriano Peixoto', 1500, NULL);
 insert into EMPREGADO values (1, 'Carlos Eduardo', 'Vendedor', TO_DATE('1997/09/29', 'yyyy/mm/dd'), TO_DATE('2011/01/14', 'yyyy/mm/dd'), 'Rua das Flores', 1200, 0);
@@ -66,6 +71,8 @@ insert into VENDA values (4, TO_DATE('2018/05/13', 'yyyy/mm/dd'), 13, 'Rua da So
 insert into VENDA values (5, TO_DATE('2017/05/13', 'yyyy/mm/dd'), 13, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 6, 3);
 insert into VENDA values (6, TO_DATE('2015/05/13', 'yyyy/mm/dd'), 16, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 6, 3);
 insert into VENDA values (7, TO_DATE('2016/05/13', 'yyyy/mm/dd'), 17, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 6, 3);
+insert into VENDA values (8, TO_DATE('2018/05/13', 'yyyy/mm/dd'), 13, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 9, 3);
+insert into VENDA values (9, TO_DATE('2018/05/13', 'yyyy/mm/dd'), 25, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 10, 3);
 
 
 insert into ITENS_VENDA values (0, 1.89, 50, 10, 0, 1);
@@ -85,4 +92,8 @@ insert into ITENS_VENDA values (13, 1.50, 5, 10, 0, 7);
 insert into ITENS_VENDA values (14, 0.50, 20, 0, 0, 8);
 insert into ITENS_VENDA values (15, 1.00, 50, 0, 0, 9);
 insert into ITENS_VENDA values (16, 1.50, 5, 10, 1, 7);
+insert into ITENS_VENDA values (17, 1.99, 20, 0, 8, 10);
+insert into ITENS_VENDA values (18, 0.99, 10, 0, 8, 10);
+insert into ITENS_VENDA values (19, 10.0, 1, 0, 8, 6);
+insert into ITENS_VENDA values (20, 6.99, 20, 0, 9, 10);
 
