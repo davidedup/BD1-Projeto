@@ -16,7 +16,14 @@ WHERE v.MATRICULA = e.MATRICULA AND TO_CHAR(DT_VENDA, 'YYYY') = 2018 AND TO_CHAR
 
 /*03. Mostre o(s) nome(s) do(s) fornecedor(s) do(s) produto(s) mais
 vendido(s) (produtos que estão em mais vendas)*/
-
+SELECT DISTINCT f.NOME
+FROM
+    FORNECEDOR f,
+    PRODUTO p,
+    (SELECT ID_PROD
+     FROM (SELECT ID_PROD, COUNT(*) AS QTD_OCORRENCIAS FROM ITENS_VENDA GROUP BY ID_PROD)
+     WHERE QTD_OCORRENCIAS = (SELECT MAX(QTD_OCORRENCIAS) FROM (SELECT ID_PROD, COUNT(*) AS QTD_OCORRENCIAS FROM ITENS_VENDA GROUP BY ID_PROD))) i
+WHERE i.ID_PROD = p.ID_PROD AND p.ID_FORN = f.ID_FORN;
 
 /*04. Crie uma view que mostra o nome da transportadora e o volume
 em dinheiro acumulado de frete para produtos entregues no
