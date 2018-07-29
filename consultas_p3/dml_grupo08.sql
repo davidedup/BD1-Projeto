@@ -30,7 +30,11 @@ WHERE V.ID_TRANSP = T.ID_TRANSP  AND (EXTRACT(MONTH FROM V.DT_ENTREGA)) = 04 GRO
 /*05. Crie uma view que mostra o nome da categoria e o total em
 dinheiro dos produtos por categoria, com data de validade até
 12/07/2018.*/
-
+CREATE OR REPLACE VIEW CATEGORIA_TOTAL(NOME, TOTAL_DINHEIRO)
+AS SELECT c.NOME, SUM(i.QUANTIDADE * i.PRECO_UNITARIO * (1 - i.DESCONTO * 0.01))
+FROM CATEGORIA c, PRODUTO p, ITENS_VENDA i
+WHERE p.DT_VALIDADE <= TO_DATE('2018-07-12', 'YYYY-MM-DD') AND i.ID_PROD = p.ID_PROD AND p.ID_CATEGORIA = c.ID_CATEGORIA
+GROUP BY c.NOME;
 
 /*06. Mostre o cliente feminino que mais comprou e o cliente
 masculino que menos comprou(ID_CLIENTE, ENDEREÇO,
