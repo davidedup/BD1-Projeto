@@ -32,7 +32,7 @@ mês de abril de 2018.*/
 CREATE OR REPLACE VIEW TOTALFRETEABRIL(FNOME, FFRETE)
 AS SELECT T.NOME, sum(V.FRETE)
 FROM VENDA V, TRANSPORTADORA T
-WHERE V.ID_TRANSP = T.ID_TRANSP  AND (EXTRACT(MONTH FROM V.DT_ENTREGA)) = 04 GROUP BY T.NOME;
+WHERE V.ID_TRANSP = T.ID_TRANSP  AND (EXTRACT(MONTH FROM V.DT_ENTREGA)) = 04 GROUP BY T.NOME, T.ID_TRANSP;
 
 /*05. Crie uma view que mostra o nome da categoria e o total em
 dinheiro dos produtos por categoria, com data de validade até
