@@ -48,6 +48,9 @@ insert into PRODUTO values (3, 'Sabão em Pó Omo 1Kg', 11.89, 7, 'N', TO_DATE('
 insert into PRODUTO values (4, 'Miojo Turma da Monica', 0.99, 10, 'N', TO_DATE('2017/11/28', 'yyyy/mm/dd'),  TO_DATE('2022/11/28', 'yyyy/mm/dd'), 3, 5);
 insert into PRODUTO values (5, 'Dove creme pos banho', 12.69, 7, 'N', TO_DATE('2017/02/19', 'yyyy/mm/dd'),  TO_DATE('2023/02/19', 'yyyy/mm/dd'), 0, 2);
 insert into PRODUTO values (6, 'Água sanitária Uni', 2.69, 7, 'N', TO_DATE('2017/02/19', 'yyyy/mm/dd'),  TO_DATE('2023/02/19', 'yyyy/mm/dd'), 0, 0);
+insert into PRODUTO values (7, 'Creme de Leite Nestlé', 1.19, 5, 'N', TO_DATE('2017/12/13', 'yyyy/mm/dd'),  TO_DATE('2018/07/12', 'yyyy/mm/dd'), 0, 1);
+insert into PRODUTO values (8, 'Chamyto', 0.39, 5, 'N', TO_DATE('2018/02/13', 'yyyy/mm/dd'),  TO_DATE('2018/06/20', 'yyyy/mm/dd'), 0, 1);
+insert into PRODUTO values (9, 'Creme Dental Colgate', 0.89, 5, 'N', TO_DATE('2017/03/16', 'yyyy/mm/dd'),  TO_DATE('2018/06/25', 'yyyy/mm/dd'), 0, 2);
 
 insert into EMPREGADO values (0, 'Maria Costa', 'Gerente', TO_DATE('1993/10/01', 'yyyy/mm/dd'), TO_DATE('2011/01/14', 'yyyy/mm/dd'), 'Rua Floriano Peixoto', 1500, NULL);
 insert into EMPREGADO values (1, 'Carlos Eduardo', 'Vendedor', TO_DATE('1997/09/29', 'yyyy/mm/dd'), TO_DATE('2011/01/14', 'yyyy/mm/dd'), 'Rua das Flores', 1200, 0);
@@ -77,5 +80,8 @@ insert into ITENS_VENDA values (9, 12.0, 3, 10, 4, 5);
 insert into ITENS_VENDA values (10, 1.99, 2, 20, 4, 6);
 insert into ITENS_VENDA values (11, 1.99, 2, 19, 4, 6);
 insert into ITENS_VENDA values (12, 1.99, 50, 0, 0, 6);
-
+insert into ITENS_VENDA values (13, 1.50, 5, 10, 0, 7);
+insert into ITENS_VENDA values (14, 0.50, 20, 0, 0, 8);
+insert into ITENS_VENDA values (15, 1.00, 50, 0, 0, 9);
+insert into ITENS_VENDA values (16, 1.50, 5, 10, 1, 7);
 
