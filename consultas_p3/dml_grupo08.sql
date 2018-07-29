@@ -22,6 +22,10 @@ vendido(s) (produtos que estão em mais vendas)*/
 em dinheiro acumulado de frete para produtos entregues no
 mês de abril de 2018.*/
 
+CREATE OR REPLACE VIEW TOTALFRETEABRIL(FNOME, FFRETE)
+AS SELECT T.NOME, sum(V.FRETE)
+FROM VENDA V, TRANSPORTADORA T
+WHERE V.ID_TRANSP = T.ID_TRANSP  AND (EXTRACT(MONTH FROM V.DT_ENTREGA)) = 04 GROUP BY T.NOME;
 
 /*05. Crie uma view que mostra o nome da categoria e o total em
 dinheiro dos produtos por categoria, com data de validade até
@@ -50,6 +54,10 @@ TOTAL_GASTO)*/
 /*10. Mostre as matrículas, nomes, funções e salários dos
 empregados que ganham acima da média.*/
 
+SELECT MATRICULA, NOME, FUNCAO, SALARIO
+FROM EMPREGADO
+WHERE SALARIO > (SELECT AVG(SALARIO) 
+                 FROM EMPREGADO);
 
 /*11. Crie um trigger que toda vez que o total de uma venda inserida
 for superior a R$300,00 coloca o frete daquela venda como
