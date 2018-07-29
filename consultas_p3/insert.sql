@@ -21,8 +21,8 @@ insert into CLIENTE values (8, '19724894172', 'Ivyna', 'Carvalho Ferreira', 'Sra
 insert into DEPENDENTE values (0, 6, 'Enzinho', 'M', TO_DATE('1994/05/03', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (1, 7, 'Luís inácio Lula da Silva', 'M', TO_DATE('2005/10/27', 'yyyy/mm/dd'));
 insert into DEPENDENTE values (2, 6, 'Maria Silva Pereira', 'F', TO_DATE('1997/12/04', 'yyyy/mm/dd'));
-insert into DEPENDENTE values (3, 5, 'Silva Cantor', 'M', TO_DATE('1990/12/20', 'yyyy/mm/dd'));
-insert into DEPENDENTE values (4, 5, 'Carlinhos Silvano Professor', 'M', TO_DATE('1990/12/20', 'yyyy/mm/dd'));
+insert into DEPENDENTE values (3, 5, 'Silva Cantor', 'M', TO_DATE('2005/12/20', 'yyyy/mm/dd'));
+insert into DEPENDENTE values (4, 5, 'Carlinhos Silvano Professor', 'M', TO_DATE('2005/12/20', 'yyyy/mm/dd'));
 
 insert into TRANSPORTADORA values (0, 'Correios', 'correios@correios.com');
 insert into TRANSPORTADORA values (1, 'SEDEX', 'sedex@cae.com');
