@@ -102,6 +102,15 @@ WHERE SALARIO > (SELECT AVG(SALARIO)
 /*11. Crie um trigger que toda vez que o total de uma venda inserida
 for superior a R$300,00 coloca o frete daquela venda como
 gratuito.*/
+CREATE OR REPLACE TRIGGER VERIFICAR_FRETE
+AFTER INSERT ON ITENS_VENDA
+FOR EACH ROW
+WHEN (((NEW.PRECO_UNITARIO - (NEW.DESCONTO * NEW.PRECO_UNITARIO / 100)) * NEW.QUANTIDADE) > 300)
+BEGIN
+    UPDATE VENDA V
+    SET V.FRETE = 0
+    WHERE V.ID_VENDA = :NEW.ID_VENDA;
+END VERIFICAR_FRETE;
 
 
 /*12. Crie um trigger para toda vez que a data de entrega for
