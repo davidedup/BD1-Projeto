@@ -4,7 +4,7 @@ sexo feminino.*/
 CREATE OR REPLACE VIEW PROD_DESCONTO
 AS SELECT c.ID_CLIENTE, c.NOME
 FROM CLIENTE c, ITENS_VENDA i, PRODUTO p
-WHERE i.ID_PROD = p.ID_PROD AND i.DESCONTO > 20 AND c.SEXO = 'F';
+WHERE i.ID_PROD = p.ID_PROD AND i.DESCONTO > 0.2 AND c.SEXO = 'F';
 
 
 /*02. Liste as matrículas dos supervisores dos empregados que
