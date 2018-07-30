@@ -56,6 +56,7 @@ insert into PRODUTO values (7, 'Creme de Leite Nestlé', 1.19, 5, 'N', TO_DATE('
 insert into PRODUTO values (8, 'Chamyto', 0.39, 5, 'N', TO_DATE('2018/02/13', 'yyyy/mm/dd'),  TO_DATE('2018/06/20', 'yyyy/mm/dd'), 0, 1);
 insert into PRODUTO values (9, 'Creme Dental Colgate', 0.89, 5, 'N', TO_DATE('2017/03/16', 'yyyy/mm/dd'),  TO_DATE('2018/06/25', 'yyyy/mm/dd'), 0, 2);
 insert into PRODUTO values (10, 'Espátula de Ouro', 149.99, 15, 'N', TO_DATE('2017/02/19', 'yyyy/mm/dd'), TO_DATE('2023/02/19', 'yyyy/mm/dd'), 1, 6);
+insert into PRODUTO values (11, 'Adoçante', 149.99, 15, 'N', TO_DATE('2015/02/19', 'yyyy/mm/dd'), TO_DATE('2016/02/19', 'yyyy/mm/dd'), 1, 6);
 
 
 insert into EMPREGADO values (0, 'Maria Costa', 'Gerente', TO_DATE('1993/10/01', 'yyyy/mm/dd'), TO_DATE('2011/01/14', 'yyyy/mm/dd'), 'Rua Floriano Peixoto', 1500, NULL);
@@ -73,25 +74,26 @@ insert into VENDA values (6, TO_DATE('2015/05/13', 'yyyy/mm/dd'), 16, 'Rua da So
 insert into VENDA values (7, TO_DATE('2016/05/13', 'yyyy/mm/dd'), 17, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 6, 3);
 insert into VENDA values (8, TO_DATE('2018/05/13', 'yyyy/mm/dd'), 13, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 9, 3);
 insert into VENDA values (9, TO_DATE('2018/05/13', 'yyyy/mm/dd'), 25, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 10, 3);
+insert into VENDA values (10, TO_DATE('2018/05/13', 'yyyy/mm/dd'), 25, 'Rua da Sol', TO_DATE('2018/04/22', 'yyyy/mm/dd'), 0, 8, 3);
+insert into VENDA values (11, TO_DATE('2015/05/13', 'yyyy/mm/dd'), 25, 'Rua da Sol', TO_DATE('2016/04/22', 'yyyy/mm/dd'), 0, 8, 3);
 
-
-insert into ITENS_VENDA values (0, 1.89, 50, 10, 0, 1);
-insert into ITENS_VENDA values (1, 3.89, 50, 20, 0, 2);
+insert into ITENS_VENDA values (0, 1.89, 50, 0.1, 0, 1);
+insert into ITENS_VENDA values (1, 3.89, 50, 0.2, 0, 2);
 insert into ITENS_VENDA values (2, 1.89, 50, 0, 1, 1);
 insert into ITENS_VENDA values (3, 3.89, 50, 0, 1, 2);
-insert into ITENS_VENDA values (4, 1.89, 50, 10, 2, 1);
-insert into ITENS_VENDA values (5, 3.89, 50, 30, 2, 2);
-insert into ITENS_VENDA values (6, 6.99, 1, 20, 3, 0);
+insert into ITENS_VENDA values (4, 1.89, 50, 0.1, 2, 1);
+insert into ITENS_VENDA values (5, 3.89, 50, 0.3, 2, 2);
+insert into ITENS_VENDA values (6, 6.99, 1, 0.2, 3, 0);
 insert into ITENS_VENDA values (7, 6.89, 2, 0.4, 1, 3);
-insert into ITENS_VENDA values (8, 0.99, 1, 20, 4, 4);
-insert into ITENS_VENDA values (9, 12.0, 3, 10, 4, 5);
-insert into ITENS_VENDA values (10, 1.99, 2, 20, 4, 6);
-insert into ITENS_VENDA values (11, 1.99, 2, 19, 4, 6);
+insert into ITENS_VENDA values (8, 0.99, 1, 0.2, 4, 4);
+insert into ITENS_VENDA values (9, 12.0, 3, 0.1, 4, 5);
+insert into ITENS_VENDA values (10, 1.99, 2, 0.2, 10, 6);
+insert into ITENS_VENDA values (11, 1.99, 2, 0.19, 4, 6);
 insert into ITENS_VENDA values (12, 1.99, 50, 0, 0, 6);
-insert into ITENS_VENDA values (13, 1.50, 5, 10, 0, 7);
+insert into ITENS_VENDA values (13, 1.50, 5, 0.1, 0, 7);
 insert into ITENS_VENDA values (14, 0.50, 20, 0, 0, 8);
 insert into ITENS_VENDA values (15, 1.00, 50, 0, 0, 9);
-insert into ITENS_VENDA values (16, 1.50, 5, 10, 1, 7);
+insert into ITENS_VENDA values (16, 1.50, 5, 0.1, 1, 7);
 insert into ITENS_VENDA values (17, 1.99, 20, 0, 8, 10);
 insert into ITENS_VENDA values (18, 0.99, 10, 0, 8, 10);
 insert into ITENS_VENDA values (19, 10.0, 1, 0, 8, 6);
