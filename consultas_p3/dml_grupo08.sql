@@ -81,7 +81,7 @@ WHERE i.ID_VENDA = v.ID_VENDA AND p.ID_PROD = i.ID_PROD AND TO_CHAR(v.DT_VENDA, 
 /*09. Mostre o total gasto por pessoas que moram no bairro da Prata
 com produtos da categoria 'Utensílios'. (ID_CLIENTE,
 TOTAL_GASTO)*/
-SELECT c.ID_CLIENTE, SUM((v.FRETE + ((i.PRECO_UNITARIO * i.QUANTIDADE) * (1 - (i.DESCONTO / 100))))) AS TOTAL_GASTO
+SELECT c.ID_CLIENTE, SUM((v.FRETE + ((i.PRECO_UNITARIO * i.QUANTIDADE) * (1 - i.DESCONTO)))) AS TOTAL_GASTO
 FROM CLIENTE c, VENDA v, ITENS_VENDA i, PRODUTO p, CATEGORIA cat
 WHERE c.END_BAIRRO = 'Prata'
     AND c.ID_CLIENTE = v.ID_CLIENTE
