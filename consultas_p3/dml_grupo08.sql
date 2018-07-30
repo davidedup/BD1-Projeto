@@ -2,7 +2,7 @@
 compraram produtos com desconto superior a 20% e são do
 sexo feminino.*/
 CREATE OR REPLACE VIEW PROD_DESCONTO
-AS SELECT c.ID_CLIENTE, c.NOME
+AS SELECT DISTINCT c.ID_CLIENTE, c.NOME
 FROM CLIENTE c, ITENS_VENDA i, PRODUTO p
 WHERE i.ID_PROD = p.ID_PROD AND i.DESCONTO > 0.2 AND c.SEXO = 'F';
 
