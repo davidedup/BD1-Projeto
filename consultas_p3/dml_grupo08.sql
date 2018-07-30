@@ -64,7 +64,7 @@ SELECT * FROM
 	GROUP BY c.NOME, c.ID_CLIENTE, c.SEXO, c.END_RUA, c.END_NUM, c.END_BAIRRO, c.END_CIDADE, c.END_ESTADO, c.END_PAIS, c.END_CEP 
 	ORDER BY COUNT(v.ID_CLIENTE)
 	)
-WHERE ROWNUM = 1
+WHERE ROWNUM = 1;
 
 
 /*07. Liste os dependentes nascidos no ano de 2005 que possuem
