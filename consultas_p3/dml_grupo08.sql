@@ -69,7 +69,7 @@ WHERE ROWNUM = 1;
 
 /*07. Liste os dependentes nascidos no ano de 2005 que possuem
 “Silva” como sobrenome*/
-SELECT d.NOME
+SELECT d.*
 FROM CLIENTE c, DEPENDENTE d
 WHERE c.ID_CLIENTE = d.ID_CLIENTE AND TO_CHAR(d.DT_NASC, 'YYYY') = 2005 AND (d.NOME LIKE '% Silva' OR d.NOME LIKE '% Silva %');
 
