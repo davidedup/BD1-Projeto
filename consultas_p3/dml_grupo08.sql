@@ -135,7 +135,9 @@ END BONUS;
 fornecedor para todos os produtos descontinuados, mesmo que
 não tenham fornecedor associado (null no campo id_forn da
 tabela Produto).*/
-CREATE OR REPLACE VIEW PROD_DESCONTINUADO
-AS SELECT p.nome, f.nome as nomeFornecedor
-	       FROM PRODUTO p, FORNECEDOR f
-	       WHERE p.DESCONTINUADO = 'S' and p.ID_FORN = f.ID_FORN ;
+CREATE OR REPLACE VIEW DESCONTINUADOS AS( 
+SELECT F.NOME, P.NOME as PRODUTONOME
+	FROM FORNECEDOR F
+	FULL JOIN PRODUTO P
+	ON F.ID_FORN = P.ID_FORN
+	WHERE P.DESCONTINUADO = 'S');
