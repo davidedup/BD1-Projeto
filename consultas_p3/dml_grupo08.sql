@@ -74,9 +74,13 @@ FROM CLIENTE c, DEPENDENTE d
 WHERE c.ID_CLIENTE = d.ID_CLIENTE AND TO_CHAR(d.DT_NASC, 'YYYY') = 2005 AND (d.NOME LIKE '% Silva' OR d.NOME LIKE '% Silva %');
 
 /*08. Quais produtos não foram vendidos nos anos de 2015 e 2016*/
-SELECT DISTINCT p.*
-FROM PRODUTO p, VENDA v, ITENS_VENDA i
-WHERE i.ID_VENDA = v.ID_VENDA AND p.ID_PROD = i.ID_PROD AND TO_CHAR(v.DT_VENDA, 'YYYY') != '2015' AND TO_CHAR(v.DT_VENDA, 'YYYY') != '2016';
+SELECT *
+FROM PRODUTO
+MINUS
+SELECT p.*
+FROM PRODUTO p, ITENS_VENDA i, VENDA v
+WHERE v.ID_VENDA = i.ID_VENDA AND i.ID_PROD = p.ID_PROD AND (TO_CHAR(v.DT_VENDA, 'YYYY') = 2015 OR TO_CHAR(v.DT_VENDA, 'YYYY') = 2016)
+
 
 /*09. Mostre o total gasto por pessoas que moram no bairro da Prata
 com produtos da categoria 'Utensílios'. (ID_CLIENTE,
